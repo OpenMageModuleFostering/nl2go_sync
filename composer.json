@@ -3,10 +3,10 @@
     "type": "magento-module",
     "license": "GPL",
     "homepage": "",
-    "description": "Synchronizes your Magento newsletter subscribers, sales figures and shop items with Newsletter2Go.",
+    "description": "Synchronizes your Magento newsletter subscribers, sales figures and shop items with Newsletter2Go",
     "authors": [
     {
-        "name": "Steffen",
+        "name": "Newsletter2Go",
         "email": "info@newsletter2go.de"
     }
 ],

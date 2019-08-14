@@ -1,25 +1,20 @@
 <?xml version="1.0"?>
 <package>
     <name>NL2go_Sync</name>
-    <version>1.3.0</version>
+    <version>3.0.03</version>
     <stability>stable</stability>
     <license>GPL</license>
     <channel>community</channel>
     <extends/>
-    <summary>Synchronizes your Magento newsletter subscribers, sales figures and shop items with Newsletter2Go.</summary>
-    <description>&lt;h2&gt;Newsletter2Go Magento Extension&lt;/h2&gt;&#xD;
-&lt;p&gt;The Magento Extension for the &lt;a href=https://www.newsletter2go.de&gt;Newsletter2Go email marketing software&lt;/a&gt; automatically synchronizes all newsletter subscribers, including basic data like name and gender as well as the total amount of sales and average sale.&lt;br /&gt;&#xD;
-On top you can easily retrieve all item data including description, price info, product images and product link just by inputting the item id in the Newsletter2Go software.&lt;/p&gt;&#xD;
-&lt;hr&gt;&#xD;
-&lt;h3&gt;How to use?&lt;/h3&gt;&#xD;
-&lt;p&gt;Get the extension key on this site and install the Newsletter2Go Magento Extension in your Magento shop. &lt;br /&gt;&#xD;
-Set up a new API user and insert the information under settings on the Newsletter2Go web site.&#xD;
-&lt;/p&gt;</description>
-    <notes>The plugin is more robust to different configurations and does not depend on Class 'Mage_Sync_Helper_Data' anymore</notes>
-    <authors><author><name>Steffen</name><user>Newsletter2Go</user><email>info@newsletter2go.de</email></author></authors>
-    <date>2014-11-21</date>
-    <time>15:24:49</time>
-    <contents><target name="magelocal"><dir name="NL2go"><dir name="Sync"><dir name="Helper"><file name="Data.php" hash="70d1fd7b2bb9ef63002d47a56e0ea66c"/></dir><dir name="Model"><dir name="Newsletter"><dir name="Api"><file name="V2.php" hash="720deb12cd47b1866c7a8bdd9e90c415"/></dir><file name="Api.php" hash="0139d3b2ef2ed98a10b3d7a14b6f7959"/></dir></dir><dir name="etc"><file name="api.xml" hash="7e11289db23d52088f15c1654b35f3a8"/><file name="config.xml" hash="8803e6d9ecbc3167cfa67089426bea66"/><file name="wsdl.xml" hash="20bbaaea37e858a3f07f597f4fae41b2"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="NL2go_Sync.xml" hash="93aca69e7ba45a5664e4bcd277aa775b"/></dir></target></contents>
+    <summary>Synchronizes your Magento newsletter subscribers, sales figures and shop items with Newsletter2Go</summary>
+    <description>The Newsletter2Go email marketing software Extension for Magento automatically synchronizes all newsletter subscribers, including basic data like name and gender as well as the total amount of sales and average sale.&amp;#xD;&#xD;
+Additionally, you can easily retrieve all item data including description, price info, product images and product link just by inputting the item id in the Newsletter2Go software.&lt;/description&gt;&#xD;
+    &lt;notes&gt;new features for magento-integration in Newsletter2Go-system</description>
+    <notes>Fixed compatibility issue with php 5.4 version</notes>
+    <authors><author><name>Newsletter2Go</name><user>Newsletter2Go</user><email>info@newsletter2go.de</email></author></authors>
+    <date>2015-08-20</date>
+    <time>12:26:32</time>
+    <contents><target name="magecommunity"><dir name="Newsletter2go"><dir name="Apiextension"><dir name="Model"><dir name="Api2"><dir name="Subscriber"><dir name="Fields"><dir name="Rest"><dir name="Admin"><file name="V1.php" hash="82f9a23f674b0cf49907e36962a95e22"/></dir></dir></dir><file name="Fields.php" hash="13050c3aebf6e555d3d7b3abfb89e1ca"/><dir name="Group"><dir name="Rest"><dir name="Admin"><file name="V1.php" hash="3e193c7f5dfdc41ad1fbc7685598894e"/></dir></dir></dir><file name="Group.php" hash="d974f58986cf34c6dbc78240a8806187"/><dir name="Item"><dir name="Rest"><dir name="Admin"><file name="V1.php" hash="c0ec589d402eb413f02f54370f5b5199"/></dir></dir></dir><file name="Item.php" hash="2511179aaf3bb819d905ea25842e4f7a"/><dir name="Rest"><dir name="Admin"><file name="V1.php" hash="69ffba7690afa243281486e7a2291248"/></dir></dir><dir name="Store"><dir name="Rest"><dir name="Admin"><file name="V1.php" hash="280c881d20d84db8842b644740122bc7"/></dir></dir></dir><file name="Store.php" hash="a98c4f907188f0debc8c560926d7e3b2"/><dir name="Version"><dir name="Rest"><dir name="Admin"><file name="V1.php" hash="086220576689b8a2ca7638d4fe74f312"/></dir></dir></dir><file name="Version.php" hash="28480d5fe6b8ff8ddb3512340d922c44"/></dir><file name="Subscriber.php" hash="fa4e32b55be186db846f21b59a03e0c2"/></dir></dir><dir name="etc"><file name="api2.xml" hash="e817575cad28cb1b240ec598a0e51d17"/><file name="config.xml" hash="44da06f11a3c22784b81e38884c87153"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Newsletter2go_Apiextension.xml" hash="712b9170d5970e2d7c9f46b8c1cd6569"/></dir></target></contents>
     <compatible/>
-    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+    <dependencies><required><php><min>5.4.00</min><max>6.0.00</max></php></required></dependencies>
 </package>

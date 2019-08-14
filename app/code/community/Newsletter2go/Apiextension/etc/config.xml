@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Newsletter2go_Apiextension>
+            <version>0.1.0</version>
+        </Newsletter2go_Apiextension>
+    </modules>
+    <global>
+        <models>
+            <apiextension>
+                <class>Newsletter2go_Apiextension_Model</class>
+            </apiextension>
+        </models>
+    </global>
+</config>
