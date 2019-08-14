@@ -9,6 +9,6 @@ class Newsletter2go_Apiextension_Model_Api2_Subscriber_Version_Rest_Admin_V1 ext
      */
     protected function _retrieveCollection()
     {
-        return array('version' =>3101);
+        return array(array('version' =>3104));
     }
 }

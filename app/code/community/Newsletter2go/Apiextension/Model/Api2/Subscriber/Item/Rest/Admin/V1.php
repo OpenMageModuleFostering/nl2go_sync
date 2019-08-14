@@ -31,11 +31,13 @@ class Newsletter2go_Apiextension_Model_Api2_Subscriber_Item_Rest_Admin_V1 extend
         $id = $this->getRequest()->getParam('id');
         $storeCode = $this->getRequest()->getParam('store');
 
+        $add_store = '';
         $model = Mage::getModel('catalog/product'); //getting product model
         if ($storeCode != null) {
 
             $storeId = Mage::getModel('core/store')->load($storeCode, 'code')->getId();
             $model->setStoreId($storeId);
+            $add_store = '?___store='.$storeCode;
         } else {
             $storeId = Mage::app()
                 ->getWebsite()
@@ -51,13 +53,13 @@ class Newsletter2go_Apiextension_Model_Api2_Subscriber_Item_Rest_Admin_V1 extend
             $_product = $model->load($id); //getting product object for particular product id
         }
 
-        if (!$_product || !isset($_product->getData()['sku'])) {
+        if (!$_product || !$_product->getId()){// !isset($_product->getData()['sku'])) {
             $_product = $model->loadByAttribute('sku', $id);
             // return array('error' => 'int-0-600', 'message' => serialize($_product->getData()));
 
         }
 
-        if (!$_product || !isset($_product->getData()['sku'])) {
+        if (!$_product || !$_product->getId()){// !isset($_product->getData()['sku'])) {
 
             return array('error' => 'int-0-600', 'message' => 'product not found');
         }
@@ -67,7 +69,13 @@ class Newsletter2go_Apiextension_Model_Api2_Subscriber_Item_Rest_Admin_V1 extend
         $this->getAdditionalData($_product, $p);
 
         $p['product_url_1'] = $_product->getUrlPath();
+        if(strlen($add_store) > 0){
+            if(strpos( $p['product_url_1'] , $add_store) === false){
+                $p['product_url_1'] =  $p['product_url_1'] .$add_store;
+            }
+        }
         $p['product_url_2'] = $_product->getProductUrl();
+
         $p['product_url_3'] = $_product->getUrlInStore();
 
         if (isset($p['price']))

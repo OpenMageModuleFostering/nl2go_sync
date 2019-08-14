@@ -106,9 +106,8 @@ class Newsletter2go_Apiextension_Model_Api2_Subscriber_Rest_Admin_V1 extends New
     protected function _update($someArray)
     {
         $subs = Mage::getModel('newsletter/subscriber')->loadByEmail($this->getRequest()->getParam('email'));
-		$data = $subs->getData();
         try {
-            if (!empty($data)) {
+            if ($subs !== false && $subs->getData() != null) {
                 $subs->setStatus(Mage_Newsletter_Model_Subscriber::STATUS_UNSUBSCRIBED);
                 $subs->save();
             }
