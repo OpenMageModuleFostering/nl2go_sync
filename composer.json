@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/NL2go_Sync",
+    "type": "magento-module",
+    "license": "GPL",
+    "homepage": "",
+    "description": "Synchronizes your Magento newsletter subscribers, sales figures and shop items with Newsletter2Go.",
+    "authors": [
+    {
+        "name": "Steffen",
+        "email": "info@newsletter2go.de"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

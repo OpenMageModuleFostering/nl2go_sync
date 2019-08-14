@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+    <name>NL2go_Sync</name>
+    <version>1.0.3</version>
+    <stability>stable</stability>
+    <license>GPL</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Synchronizes your Magento newsletter subscribers, sales figures and shop items with Newsletter2Go.</summary>
+    <description>&lt;h2&gt;Newsletter2Go Magento Extension&lt;/h2&gt;&#xD;
+&lt;p&gt;The Magento Extension for the &lt;a href=https://www.newsletter2go.de&gt;Newsletter2Go email marketing software&lt;/a&gt; automatically synchronizes all newsletter subscribers, including basic data like name and gender as well as the total amount of sales and average sale.&lt;br /&gt;&#xD;
+On top you can easily retrieve all item data including description, price info, product images and product link just by inputting the item id in the Newsletter2Go software.&lt;/p&gt;&#xD;
+&lt;hr&gt;&#xD;
+&lt;h3&gt;How to use?&lt;/h3&gt;&#xD;
+&lt;p&gt;Get the extension key on this site and install the Newsletter2Go Magento Extension in your Magento shop. &lt;br /&gt;&#xD;
+Set up a new API user and insert the information under settings on the Newsletter2Go web site.&#xD;
+&lt;/p&gt;</description>
+    <notes>Unsubscribes over Magento user accounts are being synchronized</notes>
+    <authors><author><name>Steffen</name><user>Newsletter2Go</user><email>info@newsletter2go.de</email></author></authors>
+    <date>2013-08-01</date>
+    <time>08:58:14</time>
+    <contents><target name="magelocal"><dir name="NL2go"><dir name="Sync"><dir name="Model"><dir name="Newsletter"><dir name="Api"><file name="V2.php" hash="2f07484c9730e0a7f77c14083fc7ec43"/></dir><file name="Api.php" hash="c26ea29af9b050074560193228047842"/></dir></dir><dir name="etc"><file name="api.xml" hash="f1d83f4b3ce370e72285745611ae9aee"/><file name="config.xml" hash="534eb47f4db745e8b5210c1dfb5ca40a"/><file name="wsdl.xml" hash="31e15e210a20be3dcbdbee7de454793e"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="NL2go_Sync.xml" hash="93aca69e7ba45a5664e4bcd277aa775b"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

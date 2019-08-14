@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!--
+/**
+ * NL2go newsletters subscribers list API extension
+ *
+ * @category   NL2go
+ * @package    NL2go_Sync
+ * @author     Anatoly V Koval
+ */
+
+-->
+<config>
+  <modules>
+    <NL2go_Sync>
+      <active>true</active>
+      <codePool>local</codePool>            
+	        <depends>
+                <Mage_Api />
+            </depends>
+      <version>1.0.0</version>
+    </NL2go_Sync>
+  </modules>
+</config>
