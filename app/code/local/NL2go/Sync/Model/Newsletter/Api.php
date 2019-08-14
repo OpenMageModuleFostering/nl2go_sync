@@ -13,4 +13,6 @@ class NL2go_Sync_Model_Newsletter_Api extends Mage_Api_Model_Resource_Abstract
 		public function getSubscribers()
         {
         }
+        public function setSubscriptionStatus($mail, $status){
+        }
 }

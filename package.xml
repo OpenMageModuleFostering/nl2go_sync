@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>NL2go_Sync</name>
-    <version>1.0.3</version>
+    <version>1.3.0</version>
     <stability>stable</stability>
     <license>GPL</license>
     <channel>community</channel>
@@ -15,11 +15,11 @@ On top you can easily retrieve all item data including description, price info, 
 &lt;p&gt;Get the extension key on this site and install the Newsletter2Go Magento Extension in your Magento shop. &lt;br /&gt;&#xD;
 Set up a new API user and insert the information under settings on the Newsletter2Go web site.&#xD;
 &lt;/p&gt;</description>
-    <notes>Unsubscribes over Magento user accounts are being synchronized</notes>
+    <notes>The plugin is more robust to different configurations and does not depend on Class 'Mage_Sync_Helper_Data' anymore</notes>
     <authors><author><name>Steffen</name><user>Newsletter2Go</user><email>info@newsletter2go.de</email></author></authors>
-    <date>2013-08-01</date>
-    <time>08:58:14</time>
-    <contents><target name="magelocal"><dir name="NL2go"><dir name="Sync"><dir name="Model"><dir name="Newsletter"><dir name="Api"><file name="V2.php" hash="2f07484c9730e0a7f77c14083fc7ec43"/></dir><file name="Api.php" hash="c26ea29af9b050074560193228047842"/></dir></dir><dir name="etc"><file name="api.xml" hash="f1d83f4b3ce370e72285745611ae9aee"/><file name="config.xml" hash="534eb47f4db745e8b5210c1dfb5ca40a"/><file name="wsdl.xml" hash="31e15e210a20be3dcbdbee7de454793e"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="NL2go_Sync.xml" hash="93aca69e7ba45a5664e4bcd277aa775b"/></dir></target></contents>
+    <date>2014-11-21</date>
+    <time>15:24:49</time>
+    <contents><target name="magelocal"><dir name="NL2go"><dir name="Sync"><dir name="Helper"><file name="Data.php" hash="70d1fd7b2bb9ef63002d47a56e0ea66c"/></dir><dir name="Model"><dir name="Newsletter"><dir name="Api"><file name="V2.php" hash="720deb12cd47b1866c7a8bdd9e90c415"/></dir><file name="Api.php" hash="0139d3b2ef2ed98a10b3d7a14b6f7959"/></dir></dir><dir name="etc"><file name="api.xml" hash="7e11289db23d52088f15c1654b35f3a8"/><file name="config.xml" hash="8803e6d9ecbc3167cfa67089426bea66"/><file name="wsdl.xml" hash="20bbaaea37e858a3f07f597f4fae41b2"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="NL2go_Sync.xml" hash="93aca69e7ba45a5664e4bcd277aa775b"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
 </package>

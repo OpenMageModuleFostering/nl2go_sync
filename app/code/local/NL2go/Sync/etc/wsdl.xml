@@ -62,6 +62,15 @@
 		<part name="result" type="typens:ArrayOfNewsletterSubscriberEntity"/>
 	</message>
     
+	<message name="syncNewsletterSetSubscriptionStatusRequest">
+		<part name="sessionId" type="xsd:string"/>
+		<part name="email" type="xsd:string"/>
+		<part name="status" type="xsd:int"/>
+	</message>
+	<message name="syncNewsletterSetSubscriptionStatusResponse">
+		<part name="result" type="xsd:int"/>
+	</message>
+	
 	<portType name="{{var wsdl.handler}}PortType">
 	
 		<operation name="syncNewsletterGetSubscribers">
@@ -69,12 +78,30 @@
 			<input message="typens:syncNewsletterGetSubscribersRequest"/>
 			<output message="typens:syncNewsletterGetSubscribersResponse"/>
 		</operation>
+	
+		<operation name="syncNewsletterSetSubscriptionStatus">
+			<documentation>Update subscriper status</documentation>
+			<input message="typens:syncNewsletterSetSubscriptionStatusRequest"/>
+			<output message="typens:syncNewsletterSetSubscriptionStatusResponse"/>
+		</operation>
     
 	</portType>
 	<binding name="{{var wsdl.handler}}Binding" type="typens:{{var wsdl.handler}}PortType">
 		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
 
 		<operation name="syncNewsletterGetSubscribers">
+			<soap:operation soapAction="urn:{{var wsdl.handler}}Action"/>
+			<input>
+				<soap:body namespace="urn:{{var wsdl.name}}" use="encoded"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body namespace="urn:{{var wsdl.name}}" use="encoded"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+
+		<operation name="syncNewsletterSetSubscriptionStatus">
 			<soap:operation soapAction="urn:{{var wsdl.handler}}Action"/>
 			<input>
 				<soap:body namespace="urn:{{var wsdl.name}}" use="encoded"

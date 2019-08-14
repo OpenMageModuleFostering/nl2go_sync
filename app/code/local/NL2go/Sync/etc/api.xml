@@ -26,6 +26,10 @@
 						<title>Return subscribers list with the customer info</title>
 						<method>getSubscribers</method>
 					</getSubscribers>
+					<setSubscriptionStatus translate="title" module="sync">
+						<title>Update subscriper status</title>
+						<method>setSubscriptionStatus</method>
+					</setSubscriptionStatus>
 				</methods>
 				<faults module="sync">
 					<store_not_exists>

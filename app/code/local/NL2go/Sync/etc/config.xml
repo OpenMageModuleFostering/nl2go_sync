@@ -24,5 +24,10 @@
 				</rewrite>
 			</sync>
 		</models>
+		<helpers>
+			<sync>
+				<class>NL2go_Sync_Helper</class>
+			</sync>
+		</helpers>
 	</global>
 </config>
