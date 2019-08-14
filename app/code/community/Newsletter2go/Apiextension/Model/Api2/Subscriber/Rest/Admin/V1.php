@@ -21,17 +21,21 @@ class Newsletter2go_Apiextension_Model_Api2_Subscriber_Rest_Admin_V1 extends New
         $email_str = $this->getRequest()->getParam('emails');
         $debug = $this->getRequest()->getParam('debug');
         $emails = null;
+
         try {
             if (strlen($email_str) > 0) {
                 $emails = explode(',', $email_str);
             }
 
+            if ($group == 'subscribers-only') {
+                $subscribers = $this->getSubscribersOnly($subscribed, $limit, $offset, $fields, $emails);
+                return array('items' => array($subscribers['items']));
+            }
 
+            $subscribedCond = 1;
             if ($subscribed) {
                 $subscribedCond = $prefix . 'newsletter_subscriber.subscriber_status = ' .
                     Mage_Newsletter_Model_Subscriber::STATUS_SUBSCRIBED;
-            } else {
-                $subscribedCond = 1;
             }
 
             $fieldsCond = $this->arrangeFields($fields);
@@ -69,7 +73,7 @@ class Newsletter2go_Apiextension_Model_Api2_Subscriber_Rest_Admin_V1 extends New
             $collection->addAttributeToSelect($fieldsCond['custom']);
             $collection->getSelect()->group('e.entity_id');
             if ($limit) {
-                $offset = $offset ?: 0;
+                $offset = $offset ? $offset : 0;
                 $collection->getSelect()->limit($limit, $offset);
             }
 
@@ -100,16 +104,24 @@ class Newsletter2go_Apiextension_Model_Api2_Subscriber_Rest_Admin_V1 extends New
     }
 
     /**
-     * @param array $someArray
+     * @param array $data
      * @return string
      */
-    protected function _update($someArray)
+    protected function _update($data)
     {
-        $subs = Mage::getModel('newsletter/subscriber')->loadByEmail($this->getRequest()->getParam('email'));
+        $email = $this->getRequest()->getParam('email');
+        $status = $this->getRequest()->getParam('status');
+        /** @var Mage_Newsletter_Model_Subscriber $subs */
+        $subs = Mage::getModel('newsletter/subscriber');
+        $subs = $subs->loadByEmail($email);
         try {
             if ($subs !== false && $subs->getData() != null) {
-                $subs->setStatus(Mage_Newsletter_Model_Subscriber::STATUS_UNSUBSCRIBED);
+                $status = $status == 0 ? Mage_Newsletter_Model_Subscriber::STATUS_UNSUBSCRIBED :
+                    Mage_Newsletter_Model_Subscriber::STATUS_SUBSCRIBED;
+                $subs->setStatus($status);
                 $subs->save();
+            } else {
+                $this->getResponse()->setHttpResponseCode(400);
             }
         } catch (Mage_Core_Exception $e) {
             $this->_critical($e->getMessage(), Mage_Api2_Model_Server::HTTP_INTERNAL_ERROR);
@@ -178,4 +190,38 @@ class Newsletter2go_Apiextension_Model_Api2_Subscriber_Rest_Admin_V1 extends New
         return $result;
     }
 
+    /**
+     * @param $subscribed
+     * @param $limit
+     * @param $offset
+     * @param $fields
+     * @param $emails
+     * @return array
+     */
+    private function getSubscribersOnly($subscribed, $limit, $offset, $fields, $emails)
+    {
+        /** @var Mage_Newsletter_Model_Resource_Subscriber_Collection $collection */
+        $collection = Mage::getResourceModel('newsletter/subscriber_collection');
+        $collection->addFieldToFilter('main_table.customer_id', 0);
+        $collection->addFieldToSelect('subscriber_email', 'email');
+        $collection->addFieldToSelect('store_id');
+        $collection->addFieldToSelect('subscriber_status');
+
+        if ($subscribed) {
+            $collection->addFieldToFilter('main_table.subscriber_status', Mage_Newsletter_Model_Subscriber::STATUS_SUBSCRIBED);
+        }
+
+        if (!empty($emails)) {
+            $collection->addFieldToFilter('main_table.subscriber_email', array('in' => $emails));
+        }
+
+        if ($limit) {
+            $offset = $offset ? $offset : 0;
+            $collection->getSelect()->limit($limit, $offset);
+        }
+
+        $customers = $collection->load()->toArray(strlen($fields) > 0 ? explode(',', $fields) : $fields);
+
+        return $customers;
+    }
 }

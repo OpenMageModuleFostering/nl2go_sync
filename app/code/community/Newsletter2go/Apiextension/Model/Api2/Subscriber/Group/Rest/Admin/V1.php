@@ -31,6 +31,13 @@ class Newsletter2go_Apiextension_Model_Api2_Subscriber_Group_Rest_Admin_V1 exten
                 'count' => count($customersCount),
             );
         }
+
+        $result[] = array(
+            'id' => 'subscribers-only',
+            'name' => 'Subscribers only',
+            'description' => 'Customers that are subscribed for newsletter but are not registered.',
+            'count' => 0,
+        );
         
         return $result;
     }

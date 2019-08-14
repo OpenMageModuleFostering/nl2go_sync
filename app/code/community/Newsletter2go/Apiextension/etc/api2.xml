@@ -29,7 +29,7 @@
                         <action_type>collection</action_type>
                     </route_collection>
                     <route_entity>
-                        <route>/n2go/subscribers/:email</route>
+                        <route>/n2go/subscribers/:email/status/:status</route>
                         <action_type>entity</action_type>
                     </route_entity>
                 </routes>
