@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>NL2go_Sync</name>
-    <version>3.1.04</version>
+    <version>3.1.05</version>
     <stability>stable</stability>
     <license>GPL</license>
     <channel>community</channel>
@@ -13,9 +13,9 @@ Additionally, you can easily retrieve all item data including description, price
     <notes>- compability to enterprise version&#xD;
 - bugifxes</notes>
     <authors><author><name>Newsletter2Go</name><user>Newsletter2Go</user><email>info@newsletter2go.de</email></author></authors>
-    <date>2015-09-01</date>
-    <time>13:28:26</time>
+    <date>2015-09-21</date>
+    <time>12:18:01</time>
     <contents><target name="magecommunity"><dir name="Newsletter2go"><dir name="Apiextension"><dir name="Model"><dir name="Api2"><dir name="Subscriber"><dir name="Fields"><dir name="Rest"><dir name="Admin"><file name="V1.php" hash="82f9a23f674b0cf49907e36962a95e22"/></dir></dir></dir><file name="Fields.php" hash="13050c3aebf6e555d3d7b3abfb89e1ca"/><dir name="Group"><dir name="Rest"><dir name="Admin"><file name="V1.php" hash="3e193c7f5dfdc41ad1fbc7685598894e"/></dir></dir></dir><file name="Group.php" hash="d974f58986cf34c6dbc78240a8806187"/><dir name="Item"><dir name="Rest"><dir name="Admin"><file name="V1.php" hash="24d460f494dd7c8bb560178d09e60872"/></dir></dir></dir><file name="Item.php" hash="2511179aaf3bb819d905ea25842e4f7a"/><dir name="Rest"><dir name="Admin"><file name="V1.php" hash="b92fc116b731ae54104e29bea321e247"/></dir></dir><dir name="Store"><dir name="Rest"><dir name="Admin"><file name="V1.php" hash="280c881d20d84db8842b644740122bc7"/></dir></dir></dir><file name="Store.php" hash="a98c4f907188f0debc8c560926d7e3b2"/><dir name="Version"><dir name="Rest"><dir name="Admin"><file name="V1.php" hash="107e7425338eca6c95a4980556cf08b0"/></dir></dir></dir><file name="Version.php" hash="28480d5fe6b8ff8ddb3512340d922c44"/></dir><file name="Subscriber.php" hash="fa4e32b55be186db846f21b59a03e0c2"/></dir></dir><dir name="etc"><file name="api2.xml" hash="e817575cad28cb1b240ec598a0e51d17"/><file name="config.xml" hash="44da06f11a3c22784b81e38884c87153"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Newsletter2go_Apiextension.xml" hash="712b9170d5970e2d7c9f46b8c1cd6569"/></dir></target></contents>
     <compatible/>
-    <dependencies><required><php><min>5.4.00</min><max>6.0.00</max></php></required></dependencies>
+    <dependencies><required><php><min>5.3.00</min><max>6.0.00</max></php></required></dependencies>
 </package>
