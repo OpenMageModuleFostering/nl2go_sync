@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 Synchronizes your Magento newsletter subscribers, sales figures and shop items with Newsletter2Go
